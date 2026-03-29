@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    background: #000;
+    font-family: sans-serif;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Horizon';
+    src: url('horizon.otf');
+}
+@font-face {
+    font-family: 'Horizon_outline';
+    src: url('horizon_outlined.otf');
+}
+@font-face {
+    font-family: 'BrittanySignature';
+    src: url('BrittanySignature.ttf');
+}
+
+.section-title {
+    color: #e10303;
+    font-size: 3rem; 
+    font-family: 'Horizon', sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    padding: 100px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.name1 {
+    color: #e10303;
+    font-size: 1.5rem;
+    font-family: 'Horizon', sans-serif;
+    line-height: 1;
+}
+
+.name2 {
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Horizon_outline', sans-serif;
+    line-height: 1;
+}
+
+.opts {
+    display: flex;
+    gap: 30px;
+}
+
+.opts a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #e10303;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.opts a:hover {
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #e10303;
+    cursor: pointer;
+}
+
+.main {
+    justify-content: center;
+    background-image: url('snbg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    transform: translateY(-50px);
+}
+
+.main h1 {
+    font-family: 'Horizon_outline', sans-serif;
+    font-size: clamp(4rem, 10vw, 8rem);
+    color: #e10303;
+    line-height: 1;
+}
+
+.main h2 {
+    font-family: 'BrittanySignature', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: white;
+    position: relative;
+    top: -70px;
+    margin-left: 10%;
+}
+
+.shop { background-color: #0D0D0D; justify-content: flex-start; }
+.col { background-color: #1A1A1A; justify-content: flex-start; }
+.dr { background-color: #220101; justify-content: flex-start; }
+.con { background-color: #0F1A1A; justify-content: flex-start; }
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.shop-item {
+    text-decoration: none;
+    color: inherit;
+}
+
+.shop-container, .collection-container {
+    background: rgba(96, 1, 1, 0.4);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 200px;
+}
+
+.collection-container {
+    background: rgba(3, 0, 49, 0.2);
+    align-items: flex-start;
+}
+
+.shop-container:hover, .collection-container:hover {
+    box-shadow: 0 0 20px #e10303;
+    transform: translateY(-5px);
+    background: rgba(150, 20, 20, 0.5);
+}
+
+.shop-container img {
+    height: 80px;
+    width: 100%;
+    max-width: 120px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+}
+
+.shop-container h2 {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.collection-container h2 {
+    color: #ff5555;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-family: 'Horizon', sans-serif;
+    align-self: center;
+}
+
+.collection-container h3 {
+    color: #ececec;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: normal;
+    padding-left: 10%;
+}
+
+@media (max-width: 992px) {
+    .main h2 {
+        margin-left: 0;
+        top: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding: 15px 20px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .opts {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .opts a {
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    .menu-toggle:checked ~ .opts {
+        max-height: 400px;
+    }
+
+    .hero-content {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 80px 15px 40px;
+    }
+}
+.cn-container{
+    background: #430101; 
+    border-radius: 20px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: 0%;
+    backdrop-filter: blur(20px);
+}
+input{
+    min-height: 50px;width: 90%;margin-top: 5%;margin-left: 5%;border-radius: 30px;font-size: 20px;text-align: center;
+    background-color: rgb(151, 3, 3);
+    box-shadow: black;
+    box-sizing: 30px;
+    border-color: black;
+    color: white;
+}
+button{
+    margin-left: 38%;
+    min-height: 40px;
+    height: 100%;
+    width: 100px;
+    border-radius: 30px;
+    background-color: transparent;
+    box-shadow: black;
+    box-sizing: 20px;
+    border-color: black;
+    color:white;
+    font-size: 25px;
+}
+button:hover{
+    background: #ff5555;
+}
+.form-input::placeholder{
+    color: #000;
+}
+.form-input{
+    color: #000;
+}
