@@ -119,7 +119,7 @@ section {
 
 .main h1 {
     font-family: 'Horizon_outline', sans-serif;
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(4rem, 10vw, 6rem);
     color: #e10303;
     line-height: 1;
 }
