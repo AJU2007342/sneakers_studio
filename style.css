@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     overflow-x: hidden;
+    max-width: 100%;
     background: #000;
     font-family: sans-serif;
     color: white;
@@ -211,9 +212,7 @@ section {
         margin-left: 0;
         top: -20px;
     }
-}
 
-@media (max-width: 768px) {
     .nav {
         padding: 15px 20px;
     }
@@ -237,14 +236,18 @@ section {
     }
 
     .opts a {
-        padding: 20px;
+        padding: 15px;
         width: 100%;
         text-align: center;
         border-bottom: 1px solid #333;
     }
 
+    .opts a:last-child {
+        border-bottom: none;
+    }
+
     .menu-toggle:checked ~ .opts {
-        max-height: 400px;
+        max-height: 300px;
     }
 
     .hero-content {
